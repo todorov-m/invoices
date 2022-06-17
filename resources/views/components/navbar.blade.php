@@ -11,10 +11,19 @@
                     <a class="btn btn-outline-success me-2" href="#">Проверка</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-outline-success me-2" href="#">Контрагенти</a>
-                </li>
-                <li class="nav-item">
                     <a class="btn btn-outline-success me-2" href="#">Документи</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="btn btn-outline-success me-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Номенклатури
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        @if(auth()->user()->level > 10)
+                            <li><a class="dropdown-item" href="/contragents">Контрагенти</a></li>
+                            <li><a class="dropdown-item" href="/banks">Банки</a></li>
+                        @endif
+                      </ul>
                 </li>
 
                 <li class="nav-item dropdown">

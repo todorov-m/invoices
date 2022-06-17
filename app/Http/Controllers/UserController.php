@@ -58,22 +58,22 @@ class UserController extends Controller
 
     public function login()
     {
-        $request = request()-> validate([
+        $request = request()->validate([
             'username' => 'required|exists:users,username',
             'password' => 'required'
         ]);
-        if(auth()->attempt($request))
-        {
+        if (auth()->attempt($request)) {
 
-               return redirect('/users');
-
-
+            return redirect('/users');
 
         }
+        else {
 
-        return back()->withErrors([
-            'username' => 'Грешен или несъществуващ Потребител!'
-        ]);
+            return redirect('/');
+       // return back()->withErrors([
+       //     'username' => 'Грешен или несъществуващ Потребител!'
+       // ]);
+    }
     }
 
     public function destroy()

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BankController;
+use App\Http\Controllers\ContragentController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\UserController;
 /*
@@ -15,7 +17,7 @@ use \App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('login');
 
 #Потребители
 Route::get('/users', [UserController::class,'index'])->middleware('auth');
@@ -27,3 +29,11 @@ Route::patch('/changepass/{id}', [UserController::class,'updatepass'])->middlewa
 
 Route::post('/login', [UserController::class,'login']);
 Route::post('/logout', [UserController::class,'destroy'])->middleware('auth');
+
+# Контрагенти
+Route::get('/contragents', [ContragentController::class,'index'])->middleware('auth');
+Route::post('/addcontragent', [ContragentController::class,'store'])->middleware('auth');
+
+#Банки
+Route::get('/banks', [BankController::class,'index'])->middleware('auth');
+Route::post('/addbank', [BankController::class,'store'])->middleware('auth');

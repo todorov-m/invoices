@@ -10,11 +10,10 @@
 <body>
 <main class="container-fluid">
     @auth
-        @if (Request::is('newsales') AND auth()->user()->level < 90)
 
-        @else
+
             <x-navbar/>
-        @endif
+
 
     @endauth
     <div class="mt-2">
