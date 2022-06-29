@@ -9,15 +9,15 @@ class contragent extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'contr_name',
-        'contr_bulstat',
-        'contr_iban',
-        'banks_id'
-    ];
+    protected $guarded = [];
 
     public function banks()
     {
         return $this->belongsTo(Banks::class);
+    }
+
+    public function invoices()
+    {
+        return $this->hasMany(Invoice::class);
     }
 }

@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('contr_iban');
             $table->string('contr_bankid');
             $table->string('contr_code');
+            $table->string('contr_bank');
+            $table->string('contr_bic');
             $table->timestamps();
         });
     }

@@ -4,25 +4,29 @@
     <div class="container-fluid">
          <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="btn btn-outline-success me-2 active" aria-current="page" href="#">Нов документ</a>
+                <li class="nav-item dropdown">
+                    <a class="btn btn-outline-success me-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Документи
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                            <li><a class="dropdown-item" href="/newinvoice">Нов документ</a></li>
+                            <li><a class="dropdown-item" href="/listinvoice">Списък документи</a></li>
+
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="btn btn-outline-success me-2" href="#">Проверка</a>
                 </li>
-                <li class="nav-item">
-                    <a class="btn btn-outline-success me-2" href="#">Документи</a>
-                </li>
-
-                <li class="nav-item dropdown">
+                 <li class="nav-item dropdown">
                     <a class="btn btn-outline-success me-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Номенклатури
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        @if(auth()->user()->level > 10)
+
                             <li><a class="dropdown-item" href="/contragents">Контрагенти</a></li>
                             <li><a class="dropdown-item" href="/banks">Банки</a></li>
-                        @endif
+
                       </ul>
                 </li>
 

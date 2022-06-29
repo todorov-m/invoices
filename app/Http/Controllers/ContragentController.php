@@ -19,11 +19,14 @@ class ContragentController extends Controller
 
     public function store()
     {
+
         $request = request()-> validate([
             'contr_name' => 'required',
             'contr_bulstat' =>'required',
             'contr_iban' => 'required',
-            'contr_bankid' => 'required'
+            'contr_bankid' => 'required',
+            'contr_bank' => 'required',
+            'contr_bic' => 'required'
         ]);
 
 

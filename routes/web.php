@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\ContragentController;
+use App\Http\Controllers\InvoiceController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\UserController;
 /*
@@ -37,3 +38,8 @@ Route::post('/addcontragent', [ContragentController::class,'store'])->middleware
 #Банки
 Route::get('/banks', [BankController::class,'index'])->middleware('auth');
 Route::post('/addbank', [BankController::class,'store'])->middleware('auth');
+
+#Фактури
+Route::get('/newinvoice', [InvoiceController::class,'new'])->middleware('auth');
+Route::get('/forminvoice/{uderid}', [InvoiceController::class,'form'])->middleware('auth');
+Route::post('/addinvoice', [InvoiceController::class,'store'])->middleware('auth');
